@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 
-/* Corpo da página */
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(120deg, #f3e2db, #f3e2db);
@@ -16,13 +15,11 @@ body {
     justify-content: center;
 }
 
-/* Logo */
 .logo-container img {
     width: 120px;
     margin-bottom: 20px;
 }
 
-/* Container de login */
 .login-container {
     background-color: #ffffff;
     padding: 30px 40px;
@@ -33,13 +30,11 @@ body {
     text-align: center;
 }
 
-/* Título */
 .login-container h2 {
     margin-bottom: 20px;
     color: #333;
 }
 
-/* Grupo de entrada */
 .input-group {
     margin-bottom: 20px;
     text-align: left;
@@ -59,7 +54,6 @@ body {
     font-size: 16px;
 }
 
-/* Botão */
 button[type="submit"] {
     width: 100%;
     padding: 12px;
@@ -76,7 +70,6 @@ button[type="submit"]:hover {
     background-color: #bd3694;
 }
 
-/* Esqueci a senha */
 .forgot-password {
     margin-top: 15px;
 }
