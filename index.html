@@ -1,18 +1,35 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <title>Site de INTW</title>
-  <style>
-    body {
-      background-color: purple;
-      color: white;
-      text-align: center;
-      font-family: Arial, sans-serif;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Projeto de INTW</h1>
-  <h2>Jenifer Lais </h2>
-</body>
+    <div class="logo-container">
+        <img src="task.jpg" alt="Logo">
+    </div>
+    <div class="login-container">
+        <h2>Entrar no sistema</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Usuário:</label><br>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Senha:</label><br>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Entrar</button>
+            <p class="forgot-password"><a href="#">Esqueci a senha</a></p>
+        </form>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            window.location.href = 'menu.html';
+        });
+    </script>
+</body>s
 </html>
