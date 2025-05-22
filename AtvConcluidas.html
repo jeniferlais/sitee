@@ -1,0 +1,41 @@
+
+<body>
+  <div class="container">
+        <link rel="stylesheet" href="atvConcluidas.css">
+    <h2>Consultar Atividades Realizadas</h2>
+    
+    <div class="filtro">
+      <input type="text" id="busca" placeholder="Buscar por nome da atividade...">
+      <input type="date" id="data">
+      <button onclick="buscarAtividades()">Buscar</button>
+    </div>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Atividade</th>
+          <th>Responsável</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-atividades">
+        <tr>
+          <td>20/05/2025</td>
+          <td>Reunião de Planejamento</td>
+          <td>João Silva</td>
+          <td>Concluída</td>
+        </tr>
+        <tr>
+          <td>19/05/2025</td>
+          <td>Entrega de Relatório</td>
+          <td>Maria Santos</td>
+          <td>Concluída</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+ 
+</body>
+</html>
