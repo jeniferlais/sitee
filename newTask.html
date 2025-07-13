@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cadastrar Nova Tarefa</title>
-  <link rel="stylesheet" href="styletask.css">
+  <link rel="stylesheet" href="styletask.css" />
 </head>
 <body>
   <div class="container">
@@ -12,27 +12,38 @@
 
     <form id="taskForm">
       <label for="titulo">Título da Tarefa:</label>
-      <input type="text" id="titulo" name="titulo" required>
+      <input type="text" id="titulo" name="titulo" required />
 
       <label for="descricao">Descrição:</label>
       <textarea id="descricao" name="descricao" rows="4" required></textarea>
 
       <label for="data">Data:</label>
-      <input type="date" id="data" name="data" required>
+      <input type="date" id="data" name="data" required />
 
       <label for="hora">Hora:</label>
-      <input type="time" id="hora" name="hora" required>
+      <input type="time" id="hora" name="hora" required />
 
       <button type="submit">Cadastrar Tarefa</button>
     </form>
   </div>
 
   <script>
-    document.getElementById("taskForm").addEventListener("submit", function(event) {
+    document.getElementById("taskForm").addEventListener("submit", function (event) {
       event.preventDefault();
+
+      const titulo = document.getElementById("titulo").value;
+      const descricao = document.getElementById("descricao").value;
+      const data = document.getElementById("data").value;
+      const hora = document.getElementById("hora").value;
+
+      const tarefa = { titulo, descricao, data, hora, status: "Pendente" };
+
+      let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+      tarefas.push(tarefa);
+      localStorage.setItem("tarefas", JSON.stringify(tarefas));
+
       alert("Tarefa cadastrada com sucesso!");
-      // Aqui você pode salvar os dados ou redirecionar
-      this.reset(); // limpa o formulário
+      this.reset();
     });
   </script>
 </body>

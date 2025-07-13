@@ -1,50 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Task</title>
-   <link rel="stylesheet" href="style_menu.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ajudando você a ter uma rotina mais organizada</title>
+  <link rel="stylesheet" href="style_menu.css" />
+  <style>
+
+#menu-btn {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1000;
+      background-color: #c95aad;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      left: 15px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      list-style: none;
+      padding: 10px;
+      width: 150px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      z-index: 999;
+    }
+
+    
+
+    #menu li button {
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      color: #333;
+      text-align: left;
+      padding: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    
+  </style>
 </head>
 <body>
 
-<div id="menu-container" style="text-align: center;">
-   <img src="/img/img/task.jpg" alt="Logo da escola" style="max-width: 150px; margin-bottom: 10px;">
-</div>
+  <button id="menu-btn" onclick="abrirMenu()">☰ Menu</button>
 
-<div class="container">
-   <section class="quiz-section">
-       <h1 class="titulo-principal">Ajudando você a ter uma rotina mais organizada</h1>
-       <p>Gerencie suas tarefas:</p>
+  <ul id="menu">
+    <li><button onclick="window.location.href='index.html'">Sair</button></li>
+    <li><button onclick="alert('Página Sobre em construção')">Sobre</button></li>
+  </ul>
 
-       <div class="quiz-options">
-           <div class="quiz-option">
-               <img src="img/img/new-task.png" alt="Cadastrar atividades">
-               <h2>Cadastre novas atividades</h2>
-               <button onclick="window.location.href='newTask.html'">Cadastrar</button>
-           </div>
+  <div style="text-align: center; margin-top: 80px;">
+    <img src="task.jpg" alt="Logo da escola" style="max-width: 150px; margin-bottom: 10px;">
+  </div>
 
-           <div class="quiz-option">
-               <img src="img/img/task-list.png" alt="Visualizar atividades">
-               <h2>Visualize suas atividades<br>cadastradas</h2>
-               <button onclick="window.location.href='vizuAtiv.html'">Visualizar</button>
-           </div>
+  <div class="container">
+    <section class="quiz-section">
+      <h1 class="titulo-principal">Ajudando você a ter uma rotina mais organizada</h1>
+      <p>Gerencie suas tarefas:</p>
 
-           <div class="quiz-option">
-               <img src="img/img/list.png" alt="Excluir atividades">
-               <h2>Excluir atividades<br>cadastradas</h2>
-               <button onclick="window.location.href='excluir.html'">Excluir</button>
-           </div>
-
-           <div class="quiz-option">
-            <img src="img/img/check-list.png" alt="Excluir atividades">
-            <h2>Ver atividades realizadas</h2>
-            <button onclick="window.location.href='AtvConcluidas.html'">ver</button>
+      <div class="quiz-options">
+        <div class="quiz-option">
+          <img src="img/new-task.png" alt="Cadastrar atividades" />
+          <h2>Cadastre novas atividades</h2>
+          <button onclick="window.location.href='newTask.html'">Cadastrar</button>
         </div>
-       </div>
-   </section>
-</div>
 
+        <div class="quiz-option">
+          <img src="img/task-list.png" alt="Visualizar atividades" />
+          <h2>Visualize suas atividades<br>cadastradas</h2>
+          <button onclick="window.location.href='vizuAtiv.html'">Visualizar</button>
+        </div>
 
+        <div class="quiz-option">
+          <img src="img/list.png" alt="Excluir atividades" />
+          <h2>Excluir atividades<br>cadastradas</h2>
+          <button onclick="window.location.href='excluir.html'">Excluir</button>
+        </div>
+
+        
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function abrirMenu() {
+      const menu = document.getElementById("menu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+
+   
+  </script>
 </body>
 </html>
