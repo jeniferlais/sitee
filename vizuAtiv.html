@@ -2,58 +2,57 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>Visualizar Tarefas</title>
-        <link rel="stylesheet" href="styletask.css" />
-        </head>
-        <body>
-          <div class="container">
-              <h1>Suas Tarefas Cadastradas</h1>
-                  <table>
-                        <thead>
-                                <tr>
-                                          <th>Data</th>
-                                                    <th>Hora</th>
-                                                              <th>Título</th>
-                                                                        <th>Descrição</th>
-                                                                                  <th>Status</th>
-                                                                                          </tr>
-                                                                                                </thead>
-                                                                                                      <tbody id="tabela-atividades"></tbody>
-                                                                                                          </table>
-                                                                                                            </div>
-                                                                                                            
-                                                                                                              <script>
-                                                                                                                  function formatarData(dataISO) {
-                                                                                                                        const [ano, mes, dia] = dataISO.split("-");
-                                                                                                                              return `${dia}/${mes}/${ano}`;
-                                                                                                                                  }
-                                                                                                                                  
-                                                                                                                                      function carregarTarefas() {
-                                                                                                                                            const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
-                                                                                                                                                  const tabela = document.getElementById("tabela-atividades");
-                                                                                                                                                        tabela.innerHTML = "";
-                                                                                                                                                        
-                                                                                                                                                              if (tarefas.length === 0) {
-                                                                                                                                                                      tabela.innerHTML = '<tr><td colspan="5" style="text-align:center;">Nenhuma tarefa cadastrada.</td></tr>';
-                                                                                                                                                                              return;
-                                                                                                                                                                                    }
-                                                                                                                                                                                    
-                                                                                                                                                                                          tarefas.forEach(tarefa => {
-                                                                                                                                                                                                  const linha = document.createElement("tr");
-                                                                                                                                                                                                          linha.innerHTML = `
-                                                                                                                                                                                                                    <td>${formatarData(tarefa.data)}</td>
-                                                                                                                                                                                                                              <td>${tarefa.hora}</td>
-                                                                                                                                                                                                                                        <td>${tarefa.titulo}</td>
-                                                                                                                                                                                                                                                  <td>${tarefa.descricao}</td>
-                                                                                                                                                                                                                                                            <td>${tarefa.status}</td>
-                                                                                                                                                                                                                                                                    `;
-                                                                                                                                                                                                                                                                            tabela.appendChild(linha);
-                                                                                                                                                                                                                                                                                  });
-                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                      
-                                                                                                                                                                                                                                                                                          window.onload = carregarTarefas;
-                                                                                                                                                                                                                                                                                            </script>
-                                                                                                                                                                                                                                                                                            </body>
-                                                                                                                                                                                                                                                                                            </html>
-                                                                                                                                                                                                                                                                                            >
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visualizar Tarefas</title>
+  <link rel="stylesheet" href="styletask.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Suas Tarefas Cadastradas</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Hora</th>
+          <th>Título</th>
+          <th>Descrição</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-atividades"></tbody>
+    </table>
+  </div>
+
+  <script>
+    function formatarData(dataISO) {
+      const [ano, mes, dia] = dataISO.split("-");
+      return `${dia}/${mes}/${ano}`;
+    }
+
+    function carregarTarefas() {
+      const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+      const tabela = document.getElementById("tabela-atividades");
+      tabela.innerHTML = "";
+
+      if (tarefas.length === 0) {
+        tabela.innerHTML = '<tr><td colspan="5" style="text-align:center;">Nenhuma tarefa cadastrada.</td></tr>';
+        return;
+      }
+
+      tarefas.forEach(tarefa => {
+        const linha = document.createElement("tr");
+        linha.innerHTML = `
+          <td>${formatarData(tarefa.data)}</td>
+          <td>${tarefa.hora}</td>
+          <td>${tarefa.titulo}</td>
+          <td>${tarefa.descricao}</td>
+          <td>${tarefa.status}</td>
+        `;
+        tabela.appendChild(linha);
+      });
+    }
+
+    window.onload = carregarTarefas;
+  </script>
+</body>
+</html>
